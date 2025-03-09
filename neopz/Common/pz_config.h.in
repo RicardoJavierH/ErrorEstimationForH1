@@ -1,0 +1,45 @@
+// This file is a template that will be used during INSTALL process
+// It holds all definitions (-D**, libraries, etc) passed to compiler when building this library
+
+
+#ifndef PZSOURCEDIR
+#define PZSOURCEDIR "@PZSOURCEDIR@"
+#endif
+
+#ifndef PZ_REFPATTERN_DIR
+#define PZ_REFPATTERN_DIR "@PZ_REFPATTERN_DIR@"
+#endif
+
+#ifndef PZ_BRANCH
+#define PZ_BRANCH "@PZ_BRANCH@"
+#endif
+
+#ifndef PZ_REVISION
+#define PZ_REVISION "@PZ_REVISION@"
+#endif
+
+#ifndef PZ_REVISION_DATE
+#define PZ_REVISION_DATE "@PZ_REVISION_DATE@"
+#endif
+
+//WIN32 defs
+#ifndef VC
+#cmakedefine VC
+#endif
+
+#ifndef PZ_LOG4CXX_CONFIG_FILE
+#define PZ_LOG4CXX_CONFIG_FILE "@PZ_LOG4CXX_CONFIG_FILE@"
+#endif
+
+//Type defs
+#ifndef @REAL_TYPE_DEF@
+#define @REAL_TYPE_DEF@
+#endif
+
+#ifndef @STATE_TYPE_DEF@
+#define @STATE_TYPE_DEF@
+#endif
+
+#ifndef STATE_COMPLEX
+#cmakedefine STATE_COMPLEX
+#endif
