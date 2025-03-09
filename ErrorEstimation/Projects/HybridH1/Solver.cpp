@@ -294,7 +294,7 @@ void EstimateError(ProblemConfig &config, PreConfig &preConfig, int fluxMatID, T
                 config.fElIndexDivide.push_back(gelstohref);
                 config.fElIndexPplus.push_back(gelstoPplus);
                 break;
-            case 2: //(Please set the node index that corresponds to the singularity)
+            case 2: //It uses a priori knowledge of the singularity (Please set the node index that corresponds to the singularity)
                 for (int64_t i = 0; i < estimate_elerror.Rows(); i++) {
                     REAL elementerror = estimate_elerror(i,2);
                     
@@ -308,8 +308,8 @@ void EstimateError(ProblemConfig &config, PreConfig &preConfig, int fluxMatID, T
                     gelstoPplus[gel->Index()] = porder;
                     
                     //Selects elements adjacent to the selected node:
-                    //Quadrilateral 0 for Lshape and 8 for Steklov
-                    //Triangular  6 for Steklov
+                    //Quadrilateral: 0 for Lshape and 8 for Steklov
+                    //Triangular: 0 for Lshape and 6 for Steklov
                     TPZGeoNode node = config.gmesh->NodeVec()[6];
                     const int nnodes = gel->NNodes();
                     std::set<int64_t> nodeindices;
